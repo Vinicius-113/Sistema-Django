@@ -4,7 +4,9 @@
    <div class="vh-100 d-flex align-items-center justify-content-center">
     <div class="row">
         <div class="d-flex justify-content-center col-12">
-            <from action="" method="POST">
+            <form action="" method="POST">
+                {% csrf_token %}
+
                 <div class="col-12">
                     <label for="username" class="from-label">
                         Usuário:
@@ -23,7 +25,7 @@
                     </button>
                 </div>
                 <p class="mt-3">Não possui cadastro? <a href="novoUsuario/">Cadastre-se</a>.</p>
-            </from>
+            </form>
         </div>
     </div>
    </div>
