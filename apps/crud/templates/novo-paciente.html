@@ -1,0 +1,124 @@
+{% extends 'base-crud.html' %}
+
+{% block title %}Novo Paciente{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="card shadow-sm">
+
+```
+    <div class="card-header">
+        <h5 class="mb-0">Novo Paciente</h5>
+    </div>
+
+    <div class="card-body">
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="row g-3">
+
+                <!-- Nome -->
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="nome"
+                        name="nome"
+                        required
+                    >
+                </div>
+
+                <!-- CPF -->
+                <div class="col-md-6">
+                    <label for="cpf" class="form-label">
+                        CPF
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="cpf"
+                        name="cpf"
+                        maxlength="14"
+                        placeholder="000.000.000-00"
+                        required
+                    >
+                </div>
+
+                <!-- E-mail -->
+                <div class="col-md-6">
+                    <label for="email" class="form-label">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        required
+                    >
+                </div>
+
+                <!-- Telefone -->
+                <div class="col-md-6">
+                    <label for="telefone" class="form-label">
+                        Telefone
+                    </label>
+
+                    <input
+                        type="tel"
+                        class="form-control"
+                        id="telefone"
+                        name="telefone"
+                        maxlength="15"
+                        placeholder="(00) 00000-0000"
+                        required
+                    >
+                </div>
+
+                <!-- Data de nascimento -->
+                <div class="col-md-6">
+                    <label for="data_nascimento" class="form-label">
+                        Data de nascimento
+                    </label>
+
+                    <input
+                        type="date"
+                        class="form-control"
+                        id="data_nascimento"
+                        name="data_nascimento"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <!-- Botões -->
+            <div class="d-flex justify-content-end gap-2 mt-4">
+
+                <a href="{% url 'index' %}" class="btn btn-secondary">
+                    Cancelar
+                </a>
+
+                <button type="submit" class="btn btn-primary">
+                    Salvar paciente
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+```
+
+</div>
+
+{% endblock %}
