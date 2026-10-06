@@ -2,14 +2,10 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import Paciente
 
-from .models import Paciente
-
 # Create your views here.
 @login_required
 def index(request):
     return render(request, "index.html")
-
-
 
 @login_required
 def novo_paciente(request):
@@ -32,4 +28,3 @@ def novo_paciente(request):
 @login_required
 def novo_paciente_sucesso(request):
     return render(request, "novo-paciente-sucesso.html")
-    
