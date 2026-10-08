@@ -67,9 +67,19 @@
 
                             <td>
                                 <a href="{% url 'alterar_paciente' paciente.codigo_paciente %}"
-                                   class="btn btn-sm btn-primary">
+                                    class="btn btn-sm btn-primary">
                                     Alterar
+                                </a> 
+                                <a href="{% url 'excluir_paciente' paciente.codigo_paciente %}"
+                                    class="btn btn-sm btn-dark"
+                                    onclick="return confirm('Tem certeza que deseja excluir este paciente?');">
+                                    Excluir
                                 </a>
+                                <ul>
+                                    <li>
+                                        {{ paciente.sintomas }}
+                                    </li>
+                                </ul>
                             </td>
                         </tr>
 
